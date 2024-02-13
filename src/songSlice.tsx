@@ -89,14 +89,14 @@ const songSlice = createSlice({
     },
     updateSong: (state, action: PayloadAction<Song>) => {
       const index = state.songs.findIndex(
-        (song) => song._id == action.payload._id
+        (song) => song._id === action.payload._id
       );
-      if (index != -1) {
+      if (index !== -1) {
         state.songs[index] = action.payload;
       }
     },
     removeSong: (state, action: PayloadAction<string>) => {
-      state.songs = state.songs.filter((song) => song._id != action.payload);
+      state.songs = state.songs.filter((song) => song._id !== action.payload);
     },
     addSongSuccess: (state, action: PayloadAction<string>) => {
       state.successMessage = action.payload;
