@@ -50,7 +50,7 @@ export default function SongTable() {
 
     dispatch({ type: "GET_SONGS", payload:{pageIndex:page,pageSize:rowsPerPage,searchText:searchText}});
 
-  }, [searchText, page, rowsPerPage]);
+  }, [searchText, page, rowsPerPage,dispatch]);
   rows = songs;
   
 React.useEffect(()=> {
@@ -182,12 +182,13 @@ React.useEffect(()=> {
 
   React.useEffect(() => {
     if (isEdit) {
+      // eslint-disable-next-line
       modalTitle!.innerHTML = "update the Form";
       popupFooter!.style.display = "block";
       darkBg!.classList.add("active");
       popupForm!.classList.add("active");
     }
-  }, [song]); // Log the updated song state whenever it changes
+  }, [song,isEdit]); // Log the updated song state whenever it changes
 
   const handleEdit = (selectedSong: Song) => {
     

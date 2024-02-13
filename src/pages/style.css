@@ -165,7 +165,7 @@ background-color: black;
 .space-total-count{
     display: flex;
     justify-content: space-around;
-    align-items: end;
+    align-items: flex-end;
 }
 .space-for-eachArtistAlbum{
     display: flex;
