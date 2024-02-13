@@ -11,9 +11,8 @@ export function* fetchSongs(action: PayloadAction<{ pageIndex: number,pageSize: 
         // const formateSong=yield response.json();
         yield put(setSongs(response.data.songs));
         yield put(setTotal(response.data.total))
-        // yield put(setPageNumber(action.payload.pageIndex))
-        // yield put(setRowsPerPage(action.payload.pageSize))
-        // yield put(setSearchText(action.payload.searchText))
+      
+        
 
     }catch(error){
         console.error('Error in fetching songs',error);
@@ -81,17 +80,7 @@ function* updateSongSaga(action:ReturnType<typeof updateSong>):Generator<any,voi
     }
 
 }
-function* searchSongsSaga(action: ReturnType<typeof searchSongs>): Generator<any, void, any> {
-    try {
-      yield put(setLoading(true));
-      const response = yield call(axios.get, `http://localhost:8800/api/songs/search?text=${action.payload}`);
-    //   yield put(searchSongsSuccess(response.data.songs));
-    } catch (error) {
-      yield put(setError('An error occurred while searching for songs'));
-    } finally {
-      yield put(setLoading(false));
-    }
-  }
+
 function* clearSuccessMessageSaga() {
     yield delay(2000); // Clear the success message after 5 seconds
     yield put(clearSuccessMessage());

@@ -1,11 +1,8 @@
 import { IconButton, Toolbar, Tooltip, Typography, alpha } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { Song } from "@/songSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import React from "react";
-import { RootState } from "@/store";
-import { grey } from "@mui/material/colors";
 
 interface EnhancedTableToolbarProps {
     numSelected: number;
@@ -54,8 +51,7 @@ const EnhancedTableToolbar: React.FC<EnhancedTableToolbarProps> = (props) => {
                         if (numSelected === 1) {
                           handleDelete(songToDelete);
                         } else {
-                          // Handle the case when numSelected is not equal to 1
-                          // For example, display a message or perform a different action
+                         <div>You Can not Delete</div>
                         }
                   }}>
                       <DeleteIcon />

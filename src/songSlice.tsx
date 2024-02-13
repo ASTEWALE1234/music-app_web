@@ -129,10 +129,7 @@ const songSlice = createSlice({
     setGenreCounts: (state, action: PayloadAction<GenreCount[]>) => {
       state.genreCounts = action.payload;
     },
-    // setGenreCounts: (state, action: PayloadAction<GenreCount[]>) => {
-    //   state.genreCounts = action.payload;
-    // },
-   // # of songs & albums each artist has
+  
     setArtistCounts: (state, action: PayloadAction<ArtistCount[]>) => {
       state.artistCounts = action.payload;
     },

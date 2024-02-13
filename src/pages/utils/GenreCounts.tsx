@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, CardContent, Typography, Stack, Grid } from '@mui/material';
+import { Card, CardContent, Typography, Grid } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 

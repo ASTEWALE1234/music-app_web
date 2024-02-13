@@ -1,5 +1,4 @@
-import { Dashboard, Home, Person2, Person2Outlined } from "@mui/icons-material";
-import React from "react";
+import { Dashboard, Person2Outlined } from "@mui/icons-material";
 export const SidebarData=[
 
    {

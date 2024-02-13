@@ -1,44 +1,22 @@
-import { Bar, Line,Pie } from 'react-chartjs-2';
 import {Chart, ArcElement, ChartOptions} from 'chart.js'
-import { Table } from "@mui/material";
-import { Song, setLoading, setSongs} from "../songSlice";
-import { RootState,AppDispatch } from "@/store";
+import { RootState } from "@/store";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSongs } from "../sagas/songSaga";
 
 import "./style.css";
 import { SidebarData } from "./SidebarData";
 import GenreCounts from './utils/GenreCounts';
-interface CustomChartOptions extends ChartOptions {
-  plugins: {
-    legend: {
-      position: 'right' | 'top' | 'bottom' | 'left' | 'center' | 'chartArea' | { [scaleId: string]: number } | undefined;
-    };
-  };
-  layout: {
-    padding: number;
-  };
-  responsive: boolean;
-  maintainAspectRatio: boolean;
-  height: number;
-  width: number;
-}
+
 
 Chart.register(ArcElement);
 
 const HomePage:React.FC = ()=>{
 
 const dispatch =useDispatch();
-const songs = useSelector((state: RootState) => state.songs);
 const totalSongs = useSelector((state:RootState) => state.totalSongs);
-const totalArtists = useSelector((state:RootState) => state.totalArtists);
-const totalAlbums = useSelector((state:RootState) => state.totalAlbums);
-const totalGenre = useSelector((state:RootState) => state.totalGenres);
 const genreCount = useSelector((state:RootState) => state.genreCounts);
 const albumcount = useSelector((state:RootState) => state.albumCount);
 const songsInAlbum = useSelector((state:RootState) => state.albumCounts);
-const backgroundColor = useSelector((state:RootState) => state.backgroundColor);
 
 
 let labelsList: string[] = [];
@@ -53,25 +31,7 @@ let dataCount: number[] = [];
      
     
   }, []);
-    const [totalCounts, setTotalCounts] = useState({
-      songs: totalSongs,
-      artists: totalArtists,
-      albums: totalAlbums,
-      genres: totalGenre,
-    });
-    const genreLabels = genreCount.map((item) => item._id);
-    const genreCountsData = genreCount.map((item) => item.count);
-    
-    const genreData = {
-      labels: genreLabels,
-      datasets: [
-        {
-          label: 'My First Dataset',
-          data: genreCountsData,
-          backgroundColor:backgroundColor
-        },
-      ],
-    };
+  
  
 return (
     <div className="parent">
@@ -91,8 +51,6 @@ return (
             )
           })}
         </ul>
-       {/* <div className="dashboard"><h1 className="dashboard-text">Dashboard</h1></div>
-       <div className="table-sidebar"><h1 className="dashboard-text">Dashboard</h1></div> */}
         </div>
       <div className="container">
       <div>
