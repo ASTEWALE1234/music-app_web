@@ -36,7 +36,7 @@ export function* fetchSongs(
     yield put(setLoading(true));
     const response = yield call(
       axios.get,
-      `http://localhost:8800/api/songs?search_text=${action.payload.searchText}&page_size=${action.payload.pageSize}&page_index=${action.payload.pageIndex}`
+      `https://test-project-by-astewal.onrender.com/api/songs?search_text=${action.payload.searchText}&page_size=${action.payload.pageSize}&page_index=${action.payload.pageIndex}`
     );
     // const formateSong=yield response.json();
     yield put(setSongs(response.data.songs));
@@ -54,7 +54,7 @@ function* addSongSaga(
     yield put(setLoading(true));
     const response = yield call(
       axios.post,
-      "http://localhost:8800/api/songs",
+      "https://test-project-by-astewal.onrender.com/api/songs",
       action.payload
     );
     if (response) {
@@ -76,7 +76,7 @@ function* deleteSongSaga(
 
     const response = yield call(
       axios.delete,
-      `http://localhost:8800/api/songs/${songId}`
+      `https://test-project-by-astewal.onrender.com/api/songs/${songId}`
     );
     if (response) {
       yield put(deleteSongSuccess("Song deleted successfully"));
@@ -99,7 +99,7 @@ function* updateSongSaga(
     const id = action.payload._id;
     const response = yield call(
       axios.patch,
-      `http://localhost:8800/api/songs/${id}`,
+      `https://test-project-by-astewal.onrender.com/api/songs/${id}`,
       action.payload
     );
     if (response) {
@@ -132,7 +132,7 @@ function* overAllStatistics(): Generator<any, void, any> {
   yield put(setLoading(true));
   const response = yield call(
     axios.get,
-    `http://localhost:8800/api/songs/totals`
+    `https://test-project-by-astewal.onrender.com/api/songs/totals`
   );
   console.log("all statistics areee:::", response);
 
