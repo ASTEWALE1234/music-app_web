@@ -23,7 +23,7 @@ const songsInAlbum = useSelector((state:RootState) => state.albumCounts);
     
        dispatch({type:'OVER_ALL_STATISTICS'});
     
-  }, []);
+  }, [dispatch]);
   
  
 return (
