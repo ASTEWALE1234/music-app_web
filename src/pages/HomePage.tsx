@@ -1,6 +1,6 @@
-import {Chart, ArcElement, ChartOptions} from 'chart.js'
+import {Chart, ArcElement} from 'chart.js'
 import { RootState } from "@/store";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./style.css";
@@ -19,16 +19,9 @@ const albumcount = useSelector((state:RootState) => state.albumCount);
 const songsInAlbum = useSelector((state:RootState) => state.albumCounts);
 
 
-let labelsList: string[] = [];
-let dataCount: number[] = [];
   useEffect(() => {
     
- 
-
-      dispatch({type:'OVER_ALL_STATISTICS'});
-      labelsList=genreCount.map((item) => item._id);
-      dataCount=genreCount.map((item) => item.count);
-     
+       dispatch({type:'OVER_ALL_STATISTICS'});
     
   }, []);
   
@@ -40,7 +33,7 @@ return (
           {SidebarData.map((value,key)=>{
             return (
               <li className="row"
-              id={window.location.pathname==value.link? "active":""}
+              id={window.location.pathname===value.link? "active":""}
                key={key} onClick={()=>{window.location.pathname=value.link}}>
                 {" "}
                 <div id="icon">{value.icon}</div>
