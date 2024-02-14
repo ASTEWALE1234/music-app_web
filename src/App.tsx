@@ -10,7 +10,6 @@ function App() {
       <Routes>
         <Route path="/SongTable" Component={SongTable} />
       <Route  path="/" Component={HomePage} />
-        <Route path="/statistics" Component={HomePage} />
       </Routes>
         
     </Router>

@@ -30,6 +30,7 @@ return (
     <div className="parent">
       <div className="sidebar">
         <ul className="sidebarList">
+         
           {SidebarData.map((value,key)=>{
             return (
               <li className="row"
@@ -46,10 +47,11 @@ return (
         </ul>
         </div>
       <div className="container">
+      <h2>Music Over all statistics</h2>
       <div>
      <div className='space-total-count'>
     
-
+     
       <div className='card'>
         <h2>Number of Songs in Every Genre</h2>
         <GenreCounts />

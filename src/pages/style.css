@@ -149,6 +149,10 @@ background-color: black;
     
     
 }
+.container h2{
+    color: white;
+    text-align: center;
+}
 .textHeader{
     background-color: #2F4050;
     text: #dae0e7;
