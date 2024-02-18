@@ -135,6 +135,7 @@ function* overAllStatistics(): Generator<any, void, any> {
     `https://test-project-by-astewal.onrender.com/api/songs/totals`
   );
   console.log("all statistics areee:::", response);
+  console.log("total areee:::", response.data.totalSongs);
 
   yield put(setTotalSongs(response.data.totalSongs));
   yield put(setTotalArtists(response.data.artistCounts.length));

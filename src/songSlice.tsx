@@ -115,13 +115,13 @@ const songSlice = createSlice({
       state.totalSongs = action.payload;
     },
     setTotalArtists: (state, action: PayloadAction<number>) => {
-      state.totalSongs = action.payload;
+      state.totalArtists = action.payload;
     },
     setTotalAlbums: (state, action: PayloadAction<number>) => {
-      state.totalSongs = action.payload;
+      state.totalAlbums = action.payload;
     },
     setTotalGenres: (state, action: PayloadAction<number>) => {
-      state.totalSongs = action.payload;
+      state.totalGenres = action.payload;
     },
     setBackgroundcolor: (state, action: PayloadAction<string[]>) => {
       state.backgroundColor = action.payload;
